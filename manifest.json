@@ -1,7 +1,44 @@
 {
  "manifest_version": 3,
  "name" : "Price Checker",
- "version": 
+ "version": "1.0.0",
+ "description": "Watch the price of any product page. Point the price once, and get a notification when it drops.All data stay in your browser.",
+ "minimum_chrome_version": "116",
 
+ "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+ },
 
+ "action": {
+    "default_title": "Universal Price Watch",
+    "default_popup": "popup/popup.html",
+    "default_icon" : {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+    }
+ },
+
+ "options_page": "dashboard/dashboard.html",
+
+ "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+ },
+
+ "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "contextMenus",
+    "scripting",
+    "activeTab"
+ ],
+
+ "optional_host_permission": [
+    "http: //*/*",
+    "https://*/*"
+  ]
 }
